@@ -1,5 +1,7 @@
 # 🧬 VIRO-AI: Viral Insight Rapid Optimization Analytics Intelligence
 
+<img width="1080" height="1080" alt="Logo" src="https://github.com/user-attachments/assets/e10186a3-4722-488c-bfa1-327544540807" />
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![React](https://img.shields.io/badge/react-18.x-61dafb.svg)](https://reactjs.org/)
