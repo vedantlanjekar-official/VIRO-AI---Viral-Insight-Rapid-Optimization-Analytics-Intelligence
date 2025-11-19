@@ -1,0 +1,992 @@
+/* === Analyze Page Styles === */
+
+.analyze-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 2rem 5%;
+  padding-top: 6rem; /* Add space for persistent navbar */
+}
+
+/* === Virus Selection View === */
+.virus-selection-view {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: 'Yeseva One', serif;
+  font-size: 3rem;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #5a6c7d;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* === Virus Uploader === */
+.virus-uploader {
+  margin-bottom: 4rem;
+}
+
+.upload-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border: 3px dashed #4A90E2;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+}
+
+.upload-box:hover,
+.upload-box.drag-active {
+  border-color: #2980b9;
+  background: rgba(74, 144, 226, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.2);
+}
+
+.upload-content {
+  pointer-events: none;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.upload-box h3 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.upload-box p {
+  color: #5a6c7d;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.uploaded-file {
+  background: rgba(74, 144, 226, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #2980b9;
+  font-weight: 600;
+}
+
+/* === Stored Viruses === */
+.stored-viruses {
+  margin-top: 3rem;
+}
+
+.stored-viruses h2 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.virus-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.virus-card {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+}
+
+.virus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.25);
+  border-color: #2980b9;
+}
+
+.virus-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.virus-card h3 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.virus-type {
+  color: #5a6c7d;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mutation-count {
+  background: rgba(74, 144, 226, 0.1);
+  color: #2980b9;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* === Mutation Dashboard === */
+.mutation-dashboard {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* === Mutations Grid View === */
+.mutations-grid-view {
+  text-align: center;
+}
+
+.virus-header {
+  margin-bottom: 3rem;
+}
+
+.virus-header h1 {
+  font-family: 'Yeseva One', serif;
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.virus-header p {
+  color: #5a6c7d;
+  font-size: 1.2rem;
+}
+
+.mutations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* Vertical Mutation Card */
+.mutation-card-vertical {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 280px;
+  overflow: hidden;
+}
+
+.mutation-card-vertical:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.25);
+  border-color: #2980b9;
+}
+
+.mutation-card-vertical.selected {
+  border-color: #2980b9;
+  background: rgba(74, 144, 226, 0.05);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.2);
+}
+
+.mutation-card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f4f8, #e1e8ed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mutation-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mutation-card-vertical:hover .mutation-card-image img {
+  transform: scale(1.1);
+}
+
+.mutation-card-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.mutation-card-content h4 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.mutation-brief {
+  color: #5a6c7d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mutation-image {
+  flex-shrink: 0;
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mutation-image img {
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.mutation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.mutation-info h4 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mutation-info p {
+  color: #5a6c7d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* === Animation Classes === */
+.mutation-card.sliding-to-sidebar {
+  animation: slideToSidebar 1s ease-in-out forwards;
+  z-index: 1000;
+  position: relative;
+}
+
+.mutations-grid-view.animating {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@keyframes slideToSidebar {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-40vw) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-45vw) scale(0.7);
+    opacity: 0;
+  }
+}
+
+/* === Dashboard Layout === */
+.dashboard-layout {
+  display: flex;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+/* === Mutations Sidebar === */
+.mutations-sidebar {
+  width: 300px;
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.sidebar-header h3 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-header p {
+  color: #5a6c7d;
+  font-size: 0.9rem;
+}
+
+.mutation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sidebar-mutation-card {
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #5a6c7d;
+  text-align: center;
+}
+
+.sidebar-mutation-card:hover {
+  background: rgba(74, 144, 226, 0.1);
+  color: #2980b9;
+}
+
+.sidebar-mutation-card.active {
+  background: #4A90E2;
+  color: white;
+  border-color: #2980b9;
+}
+
+/* === Dashboard Main === */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeInFromRight 0.5s ease-out 0.2s both;
+}
+
+@keyframes fadeInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.dashboard-section {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+}
+
+.dashboard-section h2 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-section h3 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-section p {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.mutation-description {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Mutation Details Box */
+.mutation-details-box {
+  background: rgba(74, 144, 226, 0.05);
+  border-left: 4px solid #4A90E2;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.mutation-detail-row {
+  padding: 0.5rem 0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.mutation-detail-row strong {
+  color: #003366;
+  margin-right: 0.5rem;
+}
+
+/* Mutation Impact Section */
+.mutation-impact-section {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.08), rgba(41, 128, 185, 0.05));
+  border: 2px solid rgba(74, 144, 226, 0.3);
+}
+
+/* === Deadliness Score === */
+.deadliness-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hazard-icon {
+  font-size: 2rem;
+}
+
+.score-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #003366;
+  min-width: 50px;
+}
+
+/* === Progress Bar === */
+.progress-bar {
+  flex: 1;
+  height: 20px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.progress-blue .progress-fill {
+  background: linear-gradient(90deg, #4A90E2, #2980b9);
+}
+
+.progress-green .progress-fill {
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+.progress-orange .progress-fill {
+  background: linear-gradient(90deg, #e67e22, #f39c12);
+}
+
+.progress-red .progress-fill {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+/* === Organs & Symptoms === */
+.organs-symptoms-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.human-body-model {
+  flex: 1;
+  background: #2c3e50;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.body-placeholder {
+  text-align: center;
+  color: white;
+}
+
+.body-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.body-placeholder p {
+  color: #ecf0f1;
+  font-size: 1.1rem;
+}
+
+/* === Body Rotation Video === */
+.body-rotation-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.body-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: white;
+}
+
+.body-fallback .body-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.body-fallback p {
+  color: #ecf0f1;
+  font-size: 1.1rem;
+}
+
+.organs-symptoms-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-box {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 1.5rem;
+}
+
+.info-box h4 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Enhanced Organs Display */
+.organs-list-detailed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.organ-detail-card {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.organ-detail-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+  border-color: #2980b9;
+}
+
+.organ-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.organ-icon-detailed {
+  font-size: 1.5rem;
+}
+
+.organ-header strong {
+  color: #003366;
+  font-size: 1rem;
+}
+
+.organ-effect {
+  color: #5a6c7d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 2.25rem;
+}
+
+/* Enhanced Symptoms Display */
+.symptoms-list-detailed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.symptom-detail-card {
+  background: white;
+  border: 2px solid #ec4899;
+  border-left: 5px solid #ec4899;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.symptom-detail-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+  background: rgba(236, 72, 153, 0.02);
+}
+
+.symptom-icon-detailed {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.symptom-text {
+  flex: 1;
+}
+
+.symptom-text strong {
+  color: #003366;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.symptom-text p {
+  color: #5a6c7d;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Scrollbar styling for symptoms */
+.symptoms-list-detailed::-webkit-scrollbar {
+  width: 6px;
+}
+
+.symptoms-list-detailed::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.symptoms-list-detailed::-webkit-scrollbar-thumb {
+  background: #4A90E2;
+  border-radius: 10px;
+}
+
+.symptoms-list-detailed::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+
+/* === Protein Model === */
+.protein-source {
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.protein-model-container {
+  margin-top: 1.5rem;
+}
+
+.protein-structures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.protein-structure {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  min-height: 200px;
+  max-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.structure-placeholder {
+  color: #5a6c7d;
+}
+
+.structure-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.structure-placeholder p {
+  font-weight: 600;
+}
+
+/* === API Integration Styles === */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(74, 144, 226, 0.3);
+  border-top: 4px solid #4A90E2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.api-integration-area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.api-placeholder {
+  text-align: center;
+  color: #5a6c7d;
+}
+
+.api-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.api-placeholder p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.api-placeholder small {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* === Protein Viewer Styles === */
+.protein-viewer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 450px;
+}
+
+.pdb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #4A90E2, #2980b9);
+  color: white;
+  border-radius: 10px 10px 0 0;
+  font-size: 0.9rem;
+}
+
+.pdb-id {
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-family: monospace;
+}
+
+.protein-visualization-3d {
+  flex: 1;
+  background: #f0f4f8;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.pdb-info {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 0 0 10px 10px;
+  color: #5a6c7d;
+  font-style: italic;
+}
+
+/* === Predict Antidote Button === */
+.predict-antidote-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.predict-antidote-btn {
+  background: linear-gradient(135deg, #4A90E2, #2980b9);
+  color: white;
+  border: none;
+  padding: 1.2rem 4rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.4);
+  letter-spacing: 1px;
+}
+
+.predict-antidote-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(74, 144, 226, 0.6);
+  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+}
+
+/* === Responsive Design === */
+@media (max-width: 1024px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .mutations-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .organs-symptoms-container {
+    flex-direction: column;
+  }
+
+  .human-body-model {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .analyze-page {
+    padding: 1rem 3%;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .virus-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mutations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protein-structures {
+    grid-template-columns: 1fr;
+  }
+
+  .organs-grid,
+  .symptoms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-box {
+    padding: 2rem 1rem;
+  }
+
+  .dashboard-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .virus-card,
+  .mutation-card {
+    padding: 1.5rem;
+  }
+
+  .deadliness-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .progress-bar {
+    width: 100%;
+  }
+
+  .predict-antidote-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+

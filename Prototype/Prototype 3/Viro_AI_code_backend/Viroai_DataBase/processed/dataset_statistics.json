@@ -1,0 +1,35 @@
+{
+  "generation_date": "2025-10-09T15:50:51.996145",
+  "total_samples": 81,
+  "train_samples": 51,
+  "val_samples": 13,
+  "test_samples": 17,
+  "num_viruses": 8,
+  "num_unique_drugs": 43,
+  "ic50_range_nm": {
+    "min": 0.5,
+    "max": 23000.0,
+    "median": 15.0
+  },
+  "pic50_range": {
+    "min": 4.638272163982407,
+    "max": 9.301029995663981,
+    "mean": 7.401819177917419
+  },
+  "virus_distribution": {
+    "HIV-1": 17,
+    "SARS-CoV-2": 13,
+    "Influenza": 7,
+    "HCV": 4,
+    "HSV-1": 3,
+    "CMV": 3,
+    "Ebola": 2,
+    "HBV": 2
+  },
+  "binding_class_distribution": {
+    "strong": 32,
+    "medium": 16,
+    "weak": 3
+  },
+  "rdkit_available": false
+}

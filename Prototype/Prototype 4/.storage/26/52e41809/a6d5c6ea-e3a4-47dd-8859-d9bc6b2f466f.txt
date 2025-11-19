@@ -1,0 +1,152 @@
+$ cd /workspace/shadcn-ui
+$ find src -type f -name "*.tsx" -o -name "*.ts" | head -30
+
+src/App.tsx
+src/components/layout/DashboardLayout.tsx
+src/components/layout/Header.tsx
+src/components/layout/Sidebar.tsx
+src/components/ui/accordion.tsx
+src/components/ui/alert-dialog.tsx
+src/components/ui/alert.tsx
+src/components/ui/aspect-ratio.tsx
+src/components/ui/avatar.tsx
+src/components/ui/badge.tsx
+src/components/ui/breadcrumb.tsx
+src/components/ui/button.tsx
+src/components/ui/calendar.tsx
+src/components/ui/card.tsx
+src/components/ui/carousel.tsx
+src/components/ui/chart.tsx
+src/components/ui/checkbox.tsx
+src/components/ui/collapsible.tsx
+src/components/ui/command.tsx
+src/components/ui/context-menu.tsx
+src/components/ui/dialog.tsx
+src/components/ui/drawer.tsx
+src/components/ui/dropdown-menu.tsx
+src/components/ui/form.tsx
+src/components/ui/hover-card.tsx
+src/components/ui/input-otp.tsx
+src/components/ui/input.tsx
+src/components/ui/label.tsx
+src/components/ui/menubar.tsx
+src/components/ui/navigation-menu.tsx
+$ find src/pages -type f -name "*.tsx"
+
+src/pages/Index.tsx
+src/pages/Login.tsx
+src/pages/NotFound.tsx
+src/pages/dashboard/Explore.tsx
+src/pages/dashboard/Help.tsx
+src/pages/dashboard/History.tsx
+src/pages/dashboard/NewProject.tsx
+src/pages/dashboard/Overview.tsx
+src/pages/dashboard/Profile.tsx
+src/pages/dashboard/Result.tsx
+src/pages/dashboard/Settings.tsx
+$ pnpm add @radix-ui/react-scroll-area
+
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 73, reused 73, downloaded 0, added 0
+Progress: resolved 386, reused 386, downloaded 0, added 0
+ WARN  1 deprecated subdependencies found: rollup-plugin-terser@7.0.2
+Already up to date
+Progress: resolved 498, reused 422, downloaded 0, added 0, done
+
+Done in 5s
+$ pnpm run lint && pnpm run build
+
+
+> shadcnui@ lint /workspace/shadcn-ui
+> eslint --quiet ./src
+
+
+> shadcnui@ build /workspace/shadcn-ui
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 1759 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.26 kB │ gzip:   0.65 kB
+dist/assets/index-DXND2qel.css   69.80 kB │ gzip:  12.10 kB
+dist/assets/index-CPgdhurF.js   561.45 kB │ gzip: 167.55 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.41s
+$ pnpm run lint && pnpm run build
+
+
+> shadcnui@ lint /workspace/shadcn-ui
+> eslint --quiet ./src
+
+
+> shadcnui@ build /workspace/shadcn-ui
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 1759 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.26 kB │ gzip:   0.65 kB
+dist/assets/index-UuawJ0la.css   71.44 kB │ gzip:  12.26 kB
+dist/assets/index-cu5158cl.js   563.68 kB │ gzip: 168.10 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.73s
+$ pnpm run lint && pnpm run build
+
+
+> shadcnui@ lint /workspace/shadcn-ui
+> eslint --quiet ./src
+
+
+> shadcnui@ build /workspace/shadcn-ui
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 1759 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.26 kB │ gzip:   0.65 kB
+dist/assets/index-BaWbSzXn.css   72.59 kB │ gzip:  12.40 kB
+dist/assets/index-CmLO9XpH.js   564.62 kB │ gzip: 168.36 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.54s
+$ pnpm run lint && pnpm run build
+
+
+> shadcnui@ lint /workspace/shadcn-ui
+> eslint --quiet ./src
+
+
+> shadcnui@ build /workspace/shadcn-ui
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 1759 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.26 kB │ gzip:   0.65 kB
+dist/assets/index-CPzVEcIw.css   71.49 kB │ gzip:  12.28 kB
+dist/assets/index-Davz_PYd.js   563.40 kB │ gzip: 168.10 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.50s

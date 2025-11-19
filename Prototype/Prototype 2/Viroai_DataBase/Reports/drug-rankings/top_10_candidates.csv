@@ -1,0 +1,11 @@
+rank,name,drug_id,binding_score,predicted_ic50_nm,binding_strength
+1,"1,1,1,3-Tetrachloroheptadecane",CID121232966,1.0,0.6801488917927854,strong
+2,Glecaprevir,CID67683334,0.864147478502071,2.7895294016991796,strong
+3,"(1S,2R)-1-benzyl-3-(dimethylamino)-2-methyl-1-phenylpropyl propanoate hydrochloride",CID25137854,0.8538834932118397,3.1034092542115705,strong
+4,"(1S,2R)-1-benzyl-3-(dimethylamino)-2-methyl-1-phenylpropyl propanoate hydrochloride",CID25137854,0.8538834932118397,3.1034092542115705,strong
+5,Oseltamivir,CID65028,0.8530108663170832,3.131670698494715,strong
+6,"(4R)-4-[(4R,5S)-2,2-dimethyl-5-[(1R,2R)-2-methyl-1-triethylsilyloxybut-3-enyl]-1,3-dioxolan-4-yl]-4-methoxybutanal",CID11957837,0.8513524577508217,3.1860922378142384,strong
+7,Cabotegravir,CID11957837,0.8513524577508217,3.1860922378142384,strong
+8,Grazoprevir,CID71481076,0.8382718739942052,3.649842490378551,strong
+9,lauroyl-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-Phe-OH,CID71481076,0.8382718739942052,3.649842490378551,strong
+10,Cilastatin,CID6435415,0.8362477161823476,3.7274045618731426,strong
