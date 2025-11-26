@@ -1,0 +1,99 @@
+{
+  "virus": "SARS-CoV-2",
+  "protein": "Spike Protein (6VXX)",
+  "analysis_date": "2025-10-09T19:37:14.037204",
+  "deadliness_score": 71,
+  "risk_level": "HIGH",
+  "top_10_drugs": [
+    {
+      "rank": 1,
+      "drug_name": "1,1,1,3-Tetrachloroheptadecane",
+      "drug_id": "CID121232966",
+      "binding_score": 1.0,
+      "predicted_ic50_nm": 0.6801488917927854,
+      "strength": "strong",
+      "smiles": "CCCCCCCCCCCCCCC(CC(Cl)(Cl)Cl)Cl"
+    },
+    {
+      "rank": 2,
+      "drug_name": "Glecaprevir",
+      "drug_id": "CID67683334",
+      "binding_score": 0.864147478502071,
+      "predicted_ic50_nm": 2.7895294016991796,
+      "strength": "strong",
+      "smiles": "CC(C)C(C(=O)N1CCCC1C2=NC(=C(N2)Cl)C3=CC4=C(C=C3)C5=C(CO4)C(=C(C=C5)C6=C(NC(=N6)C7CCCN7C(=O)C(C(C)C)NC(=O)OC)Cl)F)NC(=O)OC"
+    },
+    {
+      "rank": 3,
+      "drug_name": "(1S,2R)-1-benzyl-3-(dimethylamino)-2-methyl-1-phenylpropyl propanoate hydrochloride",
+      "drug_id": "CID25137854",
+      "binding_score": 0.8538834932118397,
+      "predicted_ic50_nm": 3.1034092542115705,
+      "strength": "strong",
+      "smiles": "[H+].CCC(=O)OC(CC1=CC=CC=C1)(C2=CC=CC=C2)C(C)CN(C)C.[Cl-]"
+    },
+    {
+      "rank": 4,
+      "drug_name": "(1S,2R)-1-benzyl-3-(dimethylamino)-2-methyl-1-phenylpropyl propanoate hydrochloride",
+      "drug_id": "CID25137854",
+      "binding_score": 0.8538834932118397,
+      "predicted_ic50_nm": 3.1034092542115705,
+      "strength": "strong",
+      "smiles": "[H+].CCC(=O)OC(CC1=CC=CC=C1)(C2=CC=CC=C2)C(C)CN(C)C.[Cl-]"
+    },
+    {
+      "rank": 5,
+      "drug_name": "Oseltamivir",
+      "drug_id": "CID65028",
+      "binding_score": 0.8530108663170837,
+      "predicted_ic50_nm": 3.1316706984947023,
+      "strength": "strong",
+      "smiles": "CCC(CC)OC1C=C(CC(C1NC(=O)C)N)C(=O)OCC"
+    },
+    {
+      "rank": 6,
+      "drug_name": "(4R)-4-[(4R,5S)-2,2-dimethyl-5-[(1R,2R)-2-methyl-1-triethylsilyloxybut-3-enyl]-1,3-dioxolan-4-yl]-4-methoxybutanal",
+      "drug_id": "CID11957837",
+      "binding_score": 0.8513524577508217,
+      "predicted_ic50_nm": 3.1860922378142384,
+      "strength": "strong",
+      "smiles": "CC[Si](CC)(CC)OC(C1C(OC(O1)(C)C)C(CCC=O)OC)C(C)C=C"
+    },
+    {
+      "rank": 7,
+      "drug_name": "Cabotegravir",
+      "drug_id": "CID11957837",
+      "binding_score": 0.8513524577508217,
+      "predicted_ic50_nm": 3.1860922378142384,
+      "strength": "strong",
+      "smiles": "CC[Si](CC)(CC)OC(C1C(OC(O1)(C)C)C(CCC=O)OC)C(C)C=C"
+    },
+    {
+      "rank": 8,
+      "drug_name": "Grazoprevir",
+      "drug_id": "CID71481076",
+      "binding_score": 0.8382718739942052,
+      "predicted_ic50_nm": 3.649842490378551,
+      "strength": "strong",
+      "smiles": "CCCCCCCCCCCC(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CC1=CC=CC=C1)C(=O)O"
+    },
+    {
+      "rank": 9,
+      "drug_name": "lauroyl-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-D-Dap-Phe-OH",
+      "drug_id": "CID71481076",
+      "binding_score": 0.8382718739942052,
+      "predicted_ic50_nm": 3.649842490378551,
+      "strength": "strong",
+      "smiles": "CCCCCCCCCCCC(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CN)C(=O)NC(CC1=CC=CC=C1)C(=O)O"
+    },
+    {
+      "rank": 10,
+      "drug_name": "Cilastatin",
+      "drug_id": "CID6435415",
+      "binding_score": 0.8362477161823479,
+      "predicted_ic50_nm": 3.727404561873127,
+      "strength": "strong",
+      "smiles": "CC1(CC1C(=O)NC(=CCCCCSCC(C(=O)O)N)C(=O)O)C"
+    }
+  ]
+}

@@ -1,0 +1,495 @@
+/* === Drug Antidote Page Styles === */
+
+.drug-antidote-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 2rem 5%;
+  padding-top: 6rem; /* Add space for persistent navbar */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* === Page Header === */
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.page-header h1 {
+  font-family: 'Yeseva One', serif;
+  font-size: 3rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: #5a6c7d;
+}
+
+/* === Drug Visualization Section === */
+.drug-visualization-section {
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.visualization-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* === Molecule Card === */
+.molecule-card {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+  transition: all 0.3s ease;
+}
+
+.molecule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(74, 144, 226, 0.25);
+}
+
+.molecule-card h3 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.molecule-visualization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.molecule-placeholder {
+  position: relative;
+  text-align: center;
+}
+
+.molecule-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.molecule-structure {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.atom {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #4A90E2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  animation: atomFloat 3s ease-in-out infinite;
+}
+
+.atom-1 {
+  top: 10px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.atom-2 {
+  top: 10px;
+  right: 20px;
+  background: #e74c3c;
+  animation-delay: 0.5s;
+}
+
+.atom-3 {
+  bottom: 10px;
+  left: 30px;
+  background: #27ae60;
+  animation-delay: 1s;
+}
+
+.atom-4 {
+  bottom: 10px;
+  right: 30px;
+  background: #f39c12;
+  animation-delay: 1.5s;
+}
+
+.bond {
+  position: absolute;
+  height: 2px;
+  background: #34495e;
+  animation: bondPulse 2s ease-in-out infinite;
+}
+
+.bond-1 {
+  top: 25px;
+  left: 45px;
+  width: 30px;
+  transform: rotate(15deg);
+  animation-delay: 0.3s;
+}
+
+.bond-2 {
+  bottom: 35px;
+  left: 45px;
+  width: 25px;
+  transform: rotate(-15deg);
+  animation-delay: 0.8s;
+}
+
+.bond-3 {
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  transform: translateX(-50%) rotate(45deg);
+  animation-delay: 1.2s;
+}
+
+@keyframes atomFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes bondPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.molecule-subtext {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* === Description Card === */
+.description-card {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+  transition: all 0.3s ease;
+}
+
+.description-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(74, 144, 226, 0.25);
+}
+
+.description-card h3 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.molecular-formula {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #4A90E2, #2980b9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.formula-text {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drug-description p {
+  color: #2c3e50;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.drug-description strong {
+  color: #003366;
+  font-weight: 700;
+}
+
+/* === Drugs Table Section === */
+.drugs-table-section {
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.drugs-table-section h2 {
+  font-family: 'Yeseva One', serif;
+  color: #003366;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.drug-table-container {
+  background: white;
+  border: 2px solid #4A90E2;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.drugs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.drugs-table th {
+  background: linear-gradient(135deg, #4A90E2, #2980b9);
+  color: white;
+  padding: 1.2rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.drugs-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.drugs-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.drugs-table tbody tr:hover {
+  background: rgba(74, 144, 226, 0.08);
+  transform: scale(1.01);
+}
+
+.drugs-table tbody tr:nth-child(even) {
+  background: rgba(248, 249, 250, 0.8);
+}
+
+.rank-cell {
+  text-align: center;
+  width: 80px;
+}
+
+.rank-number {
+  background: linear-gradient(135deg, #4A90E2, #2980b9);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+.drug-name-cell {
+  font-weight: 700;
+  color: #003366;
+  min-width: 150px;
+}
+
+.drawbacks-cell,
+.improvement-cell {
+  color: #5a6c7d;
+  line-height: 1.4;
+}
+
+.affinity-cell {
+  width: 200px;
+}
+
+.affinity-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.affinity-score {
+  font-weight: 700;
+  color: #003366;
+  min-width: 45px;
+  text-align: right;
+}
+
+/* === Small Progress Bar === */
+.progress-small {
+  height: 12px;
+  flex: 1;
+}
+
+.progress-small .progress-fill {
+  height: 100%;
+  border-radius: 6px;
+}
+
+/* === Disclaimer Section === */
+.disclaimer-section {
+  text-align: center;
+  margin-top: 4rem;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.disclaimer-text {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.8;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 1.5rem;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.disclaimer-text strong {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Design === */
+@media (max-width: 1024px) {
+  .visualization-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .drugs-table {
+    font-size: 0.85rem;
+  }
+
+  .drugs-table th,
+  .drugs-table td {
+    padding: 0.8rem 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .drug-antidote-page {
+    padding: 1rem 3%;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .molecule-card,
+  .description-card {
+    padding: 1.5rem;
+  }
+
+  .formula-text {
+    font-size: 2rem;
+  }
+
+  .drugs-table-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .drug-table-container {
+    padding: 1rem;
+  }
+
+  .drugs-table {
+    font-size: 0.8rem;
+  }
+
+  .drugs-table th,
+  .drugs-table td {
+    padding: 0.6rem 0.4rem;
+  }
+
+  .affinity-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .affinity-score {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .molecule-visualization {
+    min-height: 150px;
+  }
+
+  .molecule-icon {
+    font-size: 3rem;
+  }
+
+  .formula-text {
+    font-size: 1.6rem;
+  }
+
+  .drugs-table {
+    font-size: 0.75rem;
+  }
+
+  .rank-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .disclaimer-text {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}
