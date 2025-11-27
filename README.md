@@ -3,7 +3,7 @@
 # 🧬 VIRO-AI
 ### Viral Insight Rapid Optimization Analytics Intelligence
 
-![Team Logo](https://github.com/user-attachments/assets/e10186a3-4722-488c-bfa1-327544540807)
+<img width="1080" height="1080" alt="Logo" src="https://github.com/user-attachments/assets/98010e63-7915-4155-9a42-1132c3827f2a" />
 
 **An AI/ML-powered system for proactive viral threat management and accelerated drug discovery**
 
