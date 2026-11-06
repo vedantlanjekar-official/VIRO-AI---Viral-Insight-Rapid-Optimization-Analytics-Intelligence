@@ -10,6 +10,7 @@ import { Download, Share2, RefreshCw, Flag, MapPin, Activity, AlertTriangle, Loa
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { useProject } from '@/hooks/use-projects';
 import { useProjectResults as useResults } from '@/hooks/use-results';
+import { API_BASE_URL } from '@/lib/api/client';
 import { toast } from 'sonner';
 import Protein3DViewer from '@/components/Protein3DViewer';
 
@@ -1025,7 +1026,7 @@ $$$$
                   residues={residuesCount}
                   rmsd={typeof rmsdValue === 'number' ? rmsdValue : 1.8}
                   pdbId={getPdbId}
-                  pdbFileUrl={(results as any)?.structure_data?.pdb_file_path ? `/api/projects/${projectId}/pdb/${(results as any).structure_data.pdb_file_path}` : undefined}
+                  pdbFileUrl={(results as any)?.structure_data?.pdb_file_path ? `${API_BASE_URL}/projects/${projectId}/pdb/${(results as any).structure_data.pdb_file_path}` : undefined}
                   className="aspect-square"
                 />
                 <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
